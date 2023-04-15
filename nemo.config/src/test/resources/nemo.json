@@ -1,0 +1,7 @@
+{
+  "appName":"NemoDemo",
+  "host":"127.0.0.1",
+  "port":25002,
+  "basePackage":"com.wjy.nemo",
+  "blockedThreadCheckInterval":1000
+}

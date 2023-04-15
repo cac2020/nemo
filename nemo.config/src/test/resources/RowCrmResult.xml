@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mbos:callResponse xmlns:mbos="mboss-esb">
+    <osb:recvData xmlns:osb="mboss-esb/osb">
+        <outputdatas>
+            <resultcode>0</resultcode>
+            <reason>OK</reason>
+            <results sets="2">
+                <result rows="5" cols="28" set_id="201">
+                    <row rownum="1">
+                        <col colnum="1" param_id="2157001" param_name="申请单标识">3000010101960</col>
+                        <col colnum="2" param_id="2157002" param_name="申请单编码">HZ20210912950057232</col>
+                        <col colnum="3" param_id="2157003" param_name="申请单状态">200000</col>
+                        <col colnum="4" param_id="2157004" param_name="订单标识">3500018696696</col>
+                        <col colnum="5" param_id="2157005" param_name="订单编码">752210912410694015</col>
+                        <col colnum="6" param_id="2157006" param_name="订单状态">201300</col>
+                        <col colnum="7" param_id="2157007" param_name="订单状态说明">开通中</col>
+                        <col colnum="8" param_id="2157008" param_name="状态原因">1000</col>
+                        <col colnum="9" param_id="2157009" param_name="订单类型">000</col>
+                        <col colnum="10" param_id="2157010" param_name="受理工号">90000000671</col>
+                        <col colnum="11" param_id="2157011" param_name="受理时间">20210912093601</col>
+                        <col colnum="12" param_id="2157012" param_name="受理机构">752000000</col>
+                        <col colnum="13" param_id="2157013" param_name="受理工位">752</col>
+                        <col colnum="14" param_id="2157014" param_name="套餐名称" />
+                        <col colnum="15" param_id="2157015" param_name="服务标识">3500005312442</col>
+                        <col colnum="16" param_id="2157016" param_name="业务号码">CZCZKD2294432695</col>
+                        <col colnum="17" param_id="2157017" param_name="产品标识">2340</col>
+                        <col colnum="18" param_id="2157018" param_name="产品名称">快捷宽带</col>
+                        <col colnum="19" param_id="2157019" param_name="状态时间">未竣工</col>
+                        <col colnum="20" param_id="2157020" param_name="业务编码">CZCZKD_001</col>
+                        <col colnum="21" param_id="2157021" param_name="业务名称">快捷宽带订购</col>
+                        <col colnum="22" param_id="2157022" param_name="客户名称">何志聪</col>
+                        <col colnum="23" param_id="2157023" param_name="称受理工号名称">【ESB】广东电信统一通信平台</col>
+                        <col colnum="24" param_id="2157024" param_name="受理工位名称">惠州本地一级管理工位</col>
+                        <col colnum="25" param_id="2157025" param_name="受理机构名称">惠州分公司</col>
+                        <col colnum="26" param_id="2157026" param_name="订单来源">600101_ESBWSYYT</col>
+                        <col colnum="27" param_id="2157027" param_name="套餐编码" />
+                        <col colnum="28" param_id="2157028" param_name="来源系统">网厅ESB来源订单</col>
+                    </row>
+                    <row rownum="2">
+                        <col colnum="1" param_id="2157001" param_name="申请单标识">3000010101960</col>
+                        <col colnum="2" param_id="2157002" param_name="申请单编码">HZ20210912950057232</col>
+                        <col colnum="3" param_id="2157003" param_name="申请单状态">200000</col>
+                        <col colnum="4" param_id="2157004" param_name="订单标识">3500018696706</col>
+                        <col colnum="5" param_id="2157005" param_name="订单编码">752210912410694016</col>
+                        <col colnum="6" param_id="2157006" param_name="订单状态">201300</col>
+                        <col colnum="7" param_id="2157007" param_name="订单状态说明">开通中</col>
+                        <col colnum="8" param_id="2157008" param_name="状态原因">1000</col>
+                        <col colnum="9" param_id="2157009" param_name="订单类型">002</col>
+                        <col colnum="10" param_id="2157010" param_name="受理工号">90000000671</col>
+                        <col colnum="11" param_id="2157011" param_name="受理时间">20210912093604</col>
+                        <col colnum="12" param_id="2157012" param_name="受理机构">752000000</col>
+                        <col colnum="13" param_id="2157013" param_name="受理工位">752</col>
+                        <col colnum="14" param_id="2157014" param_name="套餐名称">快捷宽带套餐（50元）50M</col>
+                        <col colnum="15" param_id="2157015" param_name="服务标识" />
+                        <col colnum="16" param_id="2157016" param_name="业务号码" />
+                        <col colnum="17" param_id="2157017" param_name="产品标识">500046219</col>
+                        <col colnum="18" param_id="2157018" param_name="产品名称" />
+                        <col colnum="19" param_id="2157019" param_name="状态时间">未竣工</col>
+                        <col colnum="20" param_id="2157020" param_name="业务编码">YH001</col>
+                        <col colnum="21" param_id="2157021" param_name="业务名称">销售品订购(快捷宽带套餐（50元）50M)</col>
+                        <col colnum="22" param_id="2157022" param_name="客户名称">何志聪</col>
+                        <col colnum="23" param_id="2157023" param_name="称受理工号名称">【ESB】广东电信统一通信平台</col>
+                        <col colnum="24" param_id="2157024" param_name="受理工位名称">惠州本地一级管理工位</col>
+                        <col colnum="25" param_id="2157025" param_name="受理机构名称">惠州分公司</col>
+                        <col colnum="26" param_id="2157026" param_name="订单来源">600101_ESBWSYYT</col>
+                        <col colnum="27" param_id="2157027" param_name="套餐编码">DM0001-677-1-1</col>
+                        <col colnum="28" param_id="2157028" param_name="来源系统">网厅ESB来源订单</col>
+                    </row>
+                    <row rownum="3">
+                        <col colnum="1" param_id="2157001" param_name="申请单标识">3000010101960</col>
+                        <col colnum="2" param_id="2157002" param_name="申请单编码">HZ20210912950057232</col>
+                        <col colnum="3" param_id="2157003" param_name="申请单状态">200000</col>
+                        <col colnum="4" param_id="2157004" param_name="订单标识">3500018696707</col>
+                        <col colnum="5" param_id="2157005" param_name="订单编码">752210912410694017</col>
+                        <col colnum="6" param_id="2157006" param_name="订单状态">201300</col>
+                        <col colnum="7" param_id="2157007" param_name="订单状态说明">开通中</col>
+                        <col colnum="8" param_id="2157008" param_name="状态原因">1000</col>
+                        <col colnum="9" param_id="2157009" param_name="订单类型">000</col>
+                        <col colnum="10" param_id="2157010" param_name="受理工号">90000000671</col>
+                        <col colnum="11" param_id="2157011" param_name="受理时间">20210912093607</col>
+                        <col colnum="12" param_id="2157012" param_name="受理机构">752000000</col>
+                        <col colnum="13" param_id="2157013" param_name="受理工位">752</col>
+                        <col colnum="14" param_id="2157014" param_name="套餐名称" />
+                        <col colnum="15" param_id="2157015" param_name="服务标识">3500005312442</col>
+                        <col colnum="16" param_id="2157016" param_name="业务号码">CZCZKD2294432695</col>
+                        <col colnum="17" param_id="2157017" param_name="产品标识">2340</col>
+                        <col colnum="18" param_id="2157018" param_name="产品名称">快捷宽带</col>
+                        <col colnum="19" param_id="2157019" param_name="状态时间">未竣工</col>
+                        <col colnum="20" param_id="2157020" param_name="业务编码">CZCZKD_011</col>
+                        <col colnum="21" param_id="2157021" param_name="业务名称">快捷宽带变更(改速率)</col>
+                        <col colnum="22" param_id="2157022" param_name="客户名称">何志聪</col>
+                        <col colnum="23" param_id="2157023" param_name="称受理工号名称">【ESB】广东电信统一通信平台</col>
+                        <col colnum="24" param_id="2157024" param_name="受理工位名称">惠州本地一级管理工位</col>
+                        <col colnum="25" param_id="2157025" param_name="受理机构名称">惠州分公司</col>
+                        <col colnum="26" param_id="2157026" param_name="订单来源">ibssderv</col>
+                        <col colnum="27" param_id="2157027" param_name="套餐编码" />
+                        <col colnum="28" param_id="2157028" param_name="来源系统">CRM后台-派生订单</col>
+                    </row>
+                    <row rownum="4">
+                        <col colnum="1" param_id="2157001" param_name="申请单标识">3000010101960</col>
+                        <col colnum="2" param_id="2157002" param_name="申请单编码">HZ20210912950057232</col>
+                        <col colnum="3" param_id="2157003" param_name="申请单状态">200000</col>
+                        <col colnum="4" param_id="2157004" param_name="订单标识">3500018696708</col>
+                        <col colnum="5" param_id="2157005" param_name="订单编码">752210912410694018</col>
+                        <col colnum="6" param_id="2157006" param_name="订单状态">201300</col>
+                        <col colnum="7" param_id="2157007" param_name="订单状态说明">开通中</col>
+                        <col colnum="8" param_id="2157008" param_name="状态原因">1000</col>
+                        <col colnum="9" param_id="2157009" param_name="订单类型">000</col>
+                        <col colnum="10" param_id="2157010" param_name="受理工号">90000000671</col>
+                        <col colnum="11" param_id="2157011" param_name="受理时间">20210912093609</col>
+                        <col colnum="12" param_id="2157012" param_name="受理机构">752000000</col>
+                        <col colnum="13" param_id="2157013" param_name="受理工位">752</col>
+                        <col colnum="14" param_id="2157014" param_name="套餐名称" />
+                        <col colnum="15" param_id="2157015" param_name="服务标识">3500005312442</col>
+                        <col colnum="16" param_id="2157016" param_name="业务号码">CZCZKD2294432695</col>
+                        <col colnum="17" param_id="2157017" param_name="产品标识">2340</col>
+                        <col colnum="18" param_id="2157018" param_name="产品名称">快捷宽带</col>
+                        <col colnum="19" param_id="2157019" param_name="状态时间">未竣工</col>
+                        <col colnum="20" param_id="2157020" param_name="业务编码">CZCZKD_021</col>
+                        <col colnum="21" param_id="2157021" param_name="业务名称">快捷宽带变更(改专网)</col>
+                        <col colnum="22" param_id="2157022" param_name="客户名称">何志聪</col>
+                        <col colnum="23" param_id="2157023" param_name="称受理工号名称">【ESB】广东电信统一通信平台</col>
+                        <col colnum="24" param_id="2157024" param_name="受理工位名称">惠州本地一级管理工位</col>
+                        <col colnum="25" param_id="2157025" param_name="受理机构名称">惠州分公司</col>
+                        <col colnum="26" param_id="2157026" param_name="订单来源">ibssderv</col>
+                        <col colnum="27" param_id="2157027" param_name="套餐编码" />
+                        <col colnum="28" param_id="2157028" param_name="来源系统">CRM后台-派生订单</col>
+                    </row>
+                    <row rownum="5">
+                        <col colnum="1" param_id="2157001" param_name="申请单标识">3000010101443</col>
+                        <col colnum="2" param_id="2157002" param_name="申请单编码">HZ20210911950057192</col>
+                        <col colnum="3" param_id="2157003" param_name="申请单状态">301200</col>
+                        <col colnum="4" param_id="2157004" param_name="订单标识">3500018695761</col>
+                        <col colnum="5" param_id="2157005" param_name="订单编码">752210911410693935</col>
+                        <col colnum="6" param_id="2157006" param_name="订单状态">301200</col>
+                        <col colnum="7" param_id="2157007" param_name="订单状态说明">完工</col>
+                        <col colnum="8" param_id="2157008" param_name="状态原因">1000</col>
+                        <col colnum="9" param_id="2157009" param_name="订单类型">000</col>
+                        <col colnum="10" param_id="2157010" param_name="受理工号">90000000671</col>
+                        <col colnum="11" param_id="2157011" param_name="受理时间">20210911160332</col>
+                        <col colnum="12" param_id="2157012" param_name="受理机构">1</col>
+                        <col colnum="13" param_id="2157013" param_name="受理工位">200</col>
+                        <col colnum="14" param_id="2157014" param_name="套餐名称" />
+                        <col colnum="15" param_id="2157015" param_name="服务标识" />
+                        <col colnum="16" param_id="2157016" param_name="业务号码" />
+                        <col colnum="17" param_id="2157017" param_name="产品标识">0</col>
+                        <col colnum="18" param_id="2157018" param_name="产品名称" />
+                        <col colnum="19" param_id="2157019" param_name="状态时间">20210911160340</col>
+                        <col colnum="20" param_id="2157020" param_name="业务编码">NEW_CUST</col>
+                        <col colnum="21" param_id="2157021" param_name="业务名称">客户创建</col>
+                        <col colnum="22" param_id="2157022" param_name="客户名称">何志聪</col>
+                        <col colnum="23" param_id="2157023" param_name="称受理工号名称">【ESB】广东电信统一通信平台</col>
+                        <col colnum="24" param_id="2157024" param_name="受理工位名称">广州本地一级管理工位</col>
+                        <col colnum="25" param_id="2157025" param_name="受理机构名称">广东公司</col>
+                        <col colnum="26" param_id="2157026" param_name="订单来源">600101_ESBGDUC</col>
+                        <col colnum="27" param_id="2157027" param_name="套餐编码" />
+                        <col colnum="28" param_id="2157028" param_name="来源系统">广东电信统一通信平台来源订单</col>
+                    </row>
+                </result>
+                <result rows="4" cols="4" set_id="202">
+                    <row rownum="1">
+                        <col colnum="1" param_id="2157041" param_name="申请单标识">3000010101960</col>
+                        <col colnum="2" param_id="2157042" param_name="主订单标识">3500018696706</col>
+                        <col colnum="3" param_id="2157043" param_name="从订单标识">3500018696707</col>
+                        <col colnum="4" param_id="2157044" param_name="依赖关系">1100</col>
+                    </row>
+                    <row rownum="2">
+                        <col colnum="1" param_id="2157041" param_name="申请单标识">3000010101960</col>
+                        <col colnum="2" param_id="2157042" param_name="主订单标识">3500018696696</col>
+                        <col colnum="3" param_id="2157043" param_name="从订单标识">3500018696707</col>
+                        <col colnum="4" param_id="2157044" param_name="依赖关系">1100</col>
+                    </row>
+                    <row rownum="3">
+                        <col colnum="1" param_id="2157041" param_name="申请单标识">3000010101960</col>
+                        <col colnum="2" param_id="2157042" param_name="主订单标识">3500018696706</col>
+                        <col colnum="3" param_id="2157043" param_name="从订单标识">3500018696708</col>
+                        <col colnum="4" param_id="2157044" param_name="依赖关系">1100</col>
+                    </row>
+                    <row rownum="4">
+                        <col colnum="1" param_id="2157041" param_name="申请单标识">3000010101960</col>
+                        <col colnum="2" param_id="2157042" param_name="主订单标识">3500018696707</col>
+                        <col colnum="3" param_id="2157043" param_name="从订单标识">3500018696708</col>
+                        <col colnum="4" param_id="2157044" param_name="依赖关系">1100</col>
+                    </row>
+                </result>
+            </results>
+        </outputdatas>
+    </osb:recvData>
+</mbos:callResponse>

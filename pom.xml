@@ -1,0 +1,606 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+
+    Copyright © 2023 xxxx公司 (cac2020@163.com)
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <!-- 包标识 -->
+    <groupId>com.wjy</groupId>
+    <artifactId>nemo.parent</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <!-- 软件信息 -->
+    <name>nemo</name>
+    <description>XXX框架nemo</description>
+    <url>https://github.com/${github.org}/${github.repo}.git</url>
+    <organization>
+        <name>XXX公司</name>
+        <url>www.wjy.com</url>
+    </organization>
+
+    <!-- 子模块 -->
+    <modules>
+        <module>nemo.config</module>
+        <module>nemo.common</module>
+        <module>nemo.core</module>
+    </modules>
+    <!-- 代码仓库地址 -->
+    <scm>
+        <!-- 代码发布连接 -->
+        <connection>scm:git:git@github.com:${github.org}/${github.repo}.git</connection>
+        <!-- 开发者连接 -->
+        <developerConnection>scm:git:git@github.com:${github.org}/${github.repo}.git</developerConnection>
+        <!-- 版本标签 -->
+        <tag>HEAD</tag>
+        <!-- 项目浏览地址 -->
+        <url>git@github.com:${github.org}/${github.repo}.git</url>
+    </scm>
+    <!-- 提交问题地址 -->
+    <issueManagement>
+        <url>https://github.com/${github.org}/${github.repo}/issues</url>
+    </issueManagement>
+    <!-- 软件构建地址 -->
+    <ciManagement>
+        <system>travis-ci</system>
+        <url>https://travis-ci.org/${github.org}/${github.repo}</url>
+    </ciManagement>
+
+    <!-- 配置属性以及第三方软件版本 -->
+    <properties>
+        <akka-http.version>10.1.10</akka-http.version>
+        <akka.version>2.6.3</akka.version>
+        <brave.version>5.6.0</brave.version>
+        <cobertura-maven-plugin.version>2.7</cobertura-maven-plugin.version>
+        <commons-io.version>2.7</commons-io.version>
+        <druid.version>1.0.12</druid.version>
+        <fastjson.version>1.2.83</fastjson.version>
+        <findbugs-maven-plugin.version>3.0.5</findbugs-maven-plugin.version>
+        <gatling-charts-highcharts.version>3.0.3</gatling-charts-highcharts.version>
+        <github.org>cac2020</github.org>
+        <github.repo>nemo</github.repo>
+        <java.version>1.8</java.version>
+        <javassist.version>3.24.1-GA</javassist.version>
+        <jetty.version>10.0.10</jetty.version>
+        <jmeter.version>5.1.1</jmeter.version>
+        <junit.version>4.13.1</junit.version>
+        <license-maven-plugin.version>3.0</license-maven-plugin.version>
+        <logback.version>1.2.3</logback.version>
+        <maven-checkstyle-plugin.version>3.0.0</maven-checkstyle-plugin.version>
+        <maven-compiler-plugin.version>3.8.0</maven-compiler-plugin.version>
+        <maven-dependency-plugin.version>2.10</maven-dependency-plugin.version>
+        <maven-enforcer-plugin.version>3.0.0-M2</maven-enforcer-plugin.version>
+        <maven-javadoc-plugin.version>3.1.1</maven-javadoc-plugin.version>
+        <maven-pmd-plugin.version>3.12.0</maven-pmd-plugin.version>
+        <maven-shade-plugin.version>3.2.0</maven-shade-plugin.version>
+        <maven-source-plugin.version>2.4</maven-source-plugin.version>
+        <maven.build.timestamp.format>yyyyMMddHHmmss</maven.build.timestamp.format>
+        <maven.compiler.compilerVersion>1.8</maven.compiler.compilerVersion>
+        <maven.compiler.encoding>UTF-8</maven.compiler.encoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.java.formatter.plugin>0.4</maven.java.formatter.plugin>
+        <maven.version>3.0</maven.version>
+        <mybatis-spring.version>1.3.2</mybatis-spring.version>
+        <mybatis.version>3.5.6</mybatis.version>
+        <mysql.version>8.0.28</mysql.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <protostuff.version>1.5.2</protostuff.version>
+        <reflections.version>0.9.11</reflections.version>
+        <servlet.version>4.0.1</servlet.version>
+        <slf4j-api.version>1.7.26</slf4j-api.version>
+        <sonar-maven-plugin.version>3.0.2</sonar-maven-plugin.version>
+        <sortpom-maven-plugin.version>2.8.0</sortpom-maven-plugin.version>
+        <spring-boot.version>2.5.12</spring-boot.version>
+    </properties>
+
+    <!-- ********************************************************************************
+        idea里pom文件打开经常发现某些dependency或plugin呈现红色,提示xxx not found
+        可能的原因是在某次后台更新仓库时，手动中断了进程或者网络慢超时中断，导致本地仓库信息更新不完整导致；
+        解决方法：
+        方法1：打开右侧Maven工具窗口，重新Reload工程后，红色提示消失，问题解决
+        方法2：终端中执行命令进行reload:mvn dependency:resolve
+        方法3：打开idea全局配置，在Maven->Repositories菜单中，选中本地仓库，并点击Update，等待更新完成
+    -->
+
+    <!--
+    dependencyManagement可以统一管理项目中依赖包的版本号，当需要变更版本号时只需在父pom中修改即可；
+    如果某个子项目需要指定一个特殊的版本号时，只需要在自己项目的pom.xml中显示声明一个版本号即可
+    此时子项目会使用自己声明的版本号，而不继承父项目的版本号
+
+    dependencyManagement里只是声明依赖，并不会自动引入，因此子项目需要显示声明依赖。
+    在子项目中声明了依赖项，且没有指定具体版本，才会从父项目中继承该项，并且version和scope都读取自父pom；
+    另外如果子项目中指定了版本号，则会使用子项目中指定的版本
+
+    一个无子工程的独立工程中如果使用dependencyManagement，那么它自己的pom.xml文件引入的依赖也可以不指定版本
+    -->
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-api</artifactId>
+                <version>${slf4j-api.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-simple</artifactId>
+                <version>${slf4j-api.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>${junit.version}</version>
+                <scope>test</scope>
+                <!--
+                scope元素的主要作用就是控制 dependency 元素的使用范围。
+                因为项目存在编译、运行、测试、等不同的生命周期中，使用scope标签可以用来指令maven依赖生效的的范围。
+                通俗的讲，就是控制 Jar 包在哪些范围被加载和使用
+                1.compile：未指定默认就是compile，被依赖dependency需要参与到当前项目的编译，测试，运行等阶段。打包的时候也会被带上。
+                2.runtime：不会参与到项目编译，但是会参与测试，运行周期。
+                举例:使用JDBC定义数据库连接协议，那么使用jdbc的API时，对应的API jar是compile的，
+                至于使用oracle jdbc驱动包，还是mysql jdbc驱动包是运行期间的事，可以将后者的scope设置为runtime。
+                另外runntime的依赖通常和optional搭配使用，optional为true,表示该依赖是可选的，不会被依赖传递,可以用A实现，也可以用B实现。
+                optional为true的依赖不会打包，需要使用的包含该依赖的项目显式引入。
+                3.test：表示依赖项目仅仅参与测试相关的工作，包括测试代码的编译，执行。比较典型的如junit。
+                4.provided意味着打包的时候可以不用包进去，需要别的设施去提供，例如项目的使用方提供SDK包下引用的日志依赖、web 容器提供servlet相关依赖。
+                事实上该依赖理论上可以参与编译，测试，运行等周期。相当于compile，但是在打包阶段做了exclude的动作。
+                5.system元素与provided元素类似，但是被依赖项不会从 maven 仓库中查找，而是从本地系统中获取，systemPath 元素用于制定本地系统中 jar 文件的路径。
+                6.import比较特殊，它只使用在dependencyManagement标签中，表示从其它的pom中导入dependency的配置，打包类型package为pom，例如 (B项目导入A项目中的包配置)。
+                举个栗子，项目中不想使用spring-boot-starter-parent做为项目的父模块，想使用自定义的pom作为父模块，毕竟maven也是单继承，
+                那么我们可以通过在import的方式将spring-boot-dependencies的pom依赖配置导入到项目中，然后使用springboot相关的starter项
+                -->
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <!--
+    在dependencies里的依赖都会自动引入，并默认被所有的子项目继承
+    -->
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <!--
+        pluginManagement主要是为了统一管理插件，确保所有子项目使用的插件版本保持一致，类似的还是dependencies和dependencyManagement。
+        pluginManagement是表示插件声明，即你在项目中的pluginManagement下声明了插件，maven不会加载该插件，pluginManagement声明可以被继承。
+        -->
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <!--
+                    测试用例执行插件
+                    Surefire插件在test构建生命周期阶段(比如mvn test)用于执行应用程序的单元测试 这个插件的surefire:test命令会默认绑定maven执行的test阶段
+                    单元测试是默认执行的，可以用 -Dmaven.test.skip=true 或 -DskipTests=true跳过单元测试
+                     -->
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>3.0.0-M3</version>
+                </plugin>
+                <plugin>
+                    <!-- Maven 项目报告插件
+                    生成java代码交叉引用和源代码的html格式
+                    -->
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-jxr-plugin</artifactId>
+                    <version>3.0.0</version>
+                    <configuration>
+                        <outputEncoding>UTF-8</outputEncoding>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <!--
+                    为Java项目生成静态HTML网站的插件。
+                    -->
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-site-plugin</artifactId>
+                    <version>3.7.1</version>
+                </plugin>
+                <plugin>
+                    <!--
+                    当你只想将项目打成一个可执行包时，maven-shade-plugin非常适合
+                    把整个项目（包含它的依赖）都打包到一个uber-jar(fat-jar) 或者 jar-with-dependencies，意思就是包含依赖的 jar
+                    shade - 即重命名某些依赖的包,shade意为遮挡，在此处可以理解为对依赖的 jar 包的重定向（主要通过重命名的方式）。
+                    maven-plugin-shade必须和Maven 构建生命周期中的package阶段绑定，也就是说，当执行 mvn package 时会自动触发 shade。
+                    -->
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-shade-plugin</artifactId>
+                    <version>${maven-shade-plugin.version}</version>
+                </plugin>
+                <plugin>
+                    <!--
+                    使用license-maven-plugin为项目源文件顶部添加许可证
+                    使用参考：https://www.jianshu.com/p/3456f6c75b7f/
+                    -->
+                    <groupId>com.mycila</groupId>
+                    <artifactId>license-maven-plugin</artifactId>
+                    <version>${license-maven-plugin.version}</version>
+                </plugin>
+                <plugin>
+                    <!--
+                    是一个校验单元测试用例覆盖率的工具,可以生成一个测试覆盖率报告,可以给单元测试用例编写提供参考
+                    执行命令：mvn cobertura:cobertura
+                    使用参考：https://www.cnblogs.com/liuchuanfeng/p/6963403.html
+                    -->
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>cobertura-maven-plugin</artifactId>
+                    <version>${cobertura-maven-plugin.version}</version>
+                </plugin>
+                <plugin>
+                    <!--
+                    处理与依赖构建、分析和解决相关的插件。
+                    例如：mvn dependency:tree
+                    mvn dependency:analyze
+                    mvn dependency:copy :将一系列在此插件内列出的artifacts，将他们copy到一个特殊的地方，重命名或者去除其版本信息。这个可以解决远程仓库存在但是本地仓库不存在的依赖问题，copy操作可以用来将某个（些）maven artifact(s)拷贝到某个目录下
+                    mvn dependency:copy-dependencies
+                    mvn dependency:unpack:unpack和copy类似，只不过它会把拷来的包解开
+                    mvn dependency:unpack-dependencies
+                    -->
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-dependency-plugin</artifactId>
+                    <version>${maven-dependency-plugin.version}</version>
+                </plugin>
+                <plugin>
+                    <!--
+                    用来编译项目代码
+                    可以指定java编译器和编制版本
+                    -->
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>${maven-compiler-plugin.version}</version>
+                </plugin>
+                <plugin>
+                    <!--
+                    专门负责将项目源文件打成包
+                    -->
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-source-plugin</artifactId>
+                    <version>${maven-source-plugin.version}</version>
+                </plugin>
+                <plugin>
+                    <!--
+                    findbugs插件：静态代码分析工具，可识别从Java代码中发现的问题
+                    执行命令：mvn findbugs:check
+                    -->
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>findbugs-maven-plugin</artifactId>
+                    <version>${findbugs-maven-plugin.version}</version>
+                </plugin>
+                <plugin>
+                    <!--
+                    sonar检查插件
+                    -->
+                    <groupId>org.sonarsource.scanner.maven</groupId>
+                    <artifactId>sonar-maven-plugin</artifactId>
+                    <version>${sonar-maven-plugin.version}</version>
+                </plugin>
+                <plugin>
+                    <!--
+                    代码规范检查插件
+                    -->
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-checkstyle-plugin</artifactId>
+                    <version>${maven-checkstyle-plugin.version}</version>
+                </plugin>
+                <plugin>
+                    <!--
+                    生成javadoc文档插件
+                    -->
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-javadoc-plugin</artifactId>
+                    <version>${maven-javadoc-plugin.version}</version>
+                </plugin>
+                <!--
+                格式化Java代码插件
+                -->
+                <!--<plugin>
+                    <groupId>com.googlecode.maven-java-formatter-plugin</groupId>
+                    <artifactId>maven-java-formatter-plugin</artifactId>
+                    <version>${maven.java.formatter.plugin}</version>
+                </plugin>-->
+                <plugin>
+                    <!--
+                    通过格式化XML并按预定义的顺序组织XML部分，帮助用户对pom.xml进行排序。标准化分类pom的主要优点是它们变得更易读，并且不同模块pom之间的比较变得更容易
+                    -->
+                    <groupId>com.github.ekryd.sortpom</groupId>
+                    <artifactId>sortpom-maven-plugin</artifactId>
+                    <version>${sortpom-maven-plugin.version}</version>
+                </plugin>
+                <plugin>
+                    <!--
+                    Enforcer可以在项目validate时，对项目环境进行检查，比如检查环境的jdk版本
+                    -->
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-enforcer-plugin</artifactId>
+                    <version>${maven-enforcer-plugin.version}</version>
+                </plugin>
+                <plugin>
+                    <!--
+                    按照p3c规范检查代码
+                    编码规约扫描命令： mvn pmd:pmd
+                    -->
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-pmd-plugin</artifactId>
+                    <version>${maven-pmd-plugin.version}</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+        <!-- plugins插件集 会被加载和子项目传递 -->
+        <plugins>
+            <plugin>
+                <!--
+                按照p3c规范检查代码;编码规约扫描命令： mvn pmd:pmd
+                使用参考：https://blog.csdn.net/m0_49605579/article/details/125375014
+                -->
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-pmd-plugin</artifactId>
+                <configuration>
+                    <failOnViolation>false</failOnViolation>
+                    <goal>check</goal>
+                    <printFailingErrors>true</printFailingErrors>
+                </configuration>
+            </plugin>
+            <plugin>
+                <!--
+                    用来编译项目代码,可以指定java编译器和编制版本
+                    指定maven编译的jdk版本,如果不指定,maven3默认用jdk 1.5 maven2默认用jdk1.3
+                    使用参考：https://blog.csdn.net/Java_1710/article/details/120992614
+                    -->
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <!-- 一般而言，target与source是保持一致的，但是，有时候为了让程序能在其他版本的jdk中运行(对于低版本目标jdk，源代码中不能使用低版本jdk中不支持的语法)，会存在target不同于source的情况 -->
+                    <source>${maven.compiler.source}</source>
+                    <!-- 源代码使用的JDK版本 -->
+                    <target>${maven.compiler.target}</target>
+                    <!-- 需要生成的目标class文件的编译版本 -->
+                    <encoding>UTF-8</encoding>
+                    <!-- 字符集编码 -->
+                    <verbose>true</verbose>
+                    <!-- 是否冗余 -->
+                    <showWarnings>true</showWarnings>
+                    <fork>true</fork>
+                    <!-- 要使compilerVersion标签生效，还需要将fork设为true，用于明确表示编译版本配置的可用 -->
+                    <!--<executable></executable> 使用指定的javac命令，例如：<executable>${JAVA_1_4_HOME}/bin/javac</executable> -->
+                    <compilerVersion>${maven.compiler.compilerVersion}</compilerVersion>
+                    <!-- 指定插件将使用的编译器的版本 -->
+                    <meminitial>128m</meminitial>
+                    <!-- 编译器使用的初始内存 -->
+                    <maxmem>512m</maxmem>
+                    <!-- 编译器使用的最大内存 -->
+                    <compilerArgument>-proc:none</compilerArgument>
+                    <!-- 这个选项用来传递编译器自身不包含但是却支持的参数选项 -->
+                </configuration>
+            </plugin>
+            <plugin>
+                <!--
+                专门负责将项目源文件打成包
+                使用参考：https://blog.csdn.net/liaowenxiong/article/details/124879376
+                -->
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <configuration>
+                    <attach>true</attach>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>jar-no-fork</goal>
+                        </goals>
+                        <phase>install</phase>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <!-- findbugs插件：静态代码分析工具，可识别从Java代码中发现的问题
+                    执行命令：mvn findbugs:check
+                   -->
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>findbugs-maven-plugin</artifactId>
+                <configuration>
+                    <effort>Low</effort>
+                    <threshold>Medium</threshold>
+                    <failOnError>false</failOnError>
+                    <includeTests>true</includeTests>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>run-findbugs</id>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                        <phase>package</phase>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <!-- sonar检查插件 -->
+                <groupId>org.sonarsource.scanner.maven</groupId>
+                <artifactId>sonar-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <!--
+                    代码规范检查插件
+                -->
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-checkstyle-plugin</artifactId>
+                <configuration>
+                    <configLocation>conf/flower-checkstyle.xml</configLocation>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>validate</id>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                        <phase>validate</phase>
+                        <configuration>
+                            <consoleOutput>true</consoleOutput>
+                            <failsOnError>true</failsOnError>
+                            <violationSeverity>error</violationSeverity>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <!--
+                生成javadoc插件
+                执行命令：mvn javadoc:javadoc
+                -->
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <goals>
+                            <goal>jar</goal>
+                            <goal>aggregate</goal>
+                        </goals>
+                        <phase>deploy</phase>
+                        <configuration>
+                            <doclint>none</doclint>
+                            <failOnError>false</failOnError>
+                            <failOnWarnings>false</failOnWarnings>
+                            <charset>${project.build.sourceEncoding}</charset>
+                            <docencoding>${project.build.sourceEncoding}</docencoding>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <!--
+                    使用license-maven-plugin为项目源文件顶部添加许可证
+                    使用参考：https://www.jianshu.com/p/3456f6c75b7f/
+                    -->
+                <groupId>com.mycila</groupId>
+                <artifactId>license-maven-plugin</artifactId>
+                <configuration>
+                    <!--HEADER文件-->
+                    <header>com/mycila/maven/plugin/license/templates/APACHE-2.txt</header>
+                    <properties>
+                        <owner>xxxx公司</owner>
+                        <email>cac2020@163.com</email>
+                        <project.inceptionYear>2023</project.inceptionYear>
+                    </properties>
+                    <!--排除文件-->
+                    <excludes>
+                        <exclude>**/README</exclude>
+                        <exclude>**/*.md</exclude>
+                        <exclude>**/*.txt</exclude>
+                        <exclude>**/*.log</exclude>
+                        <exclude>src/test/resources/**</exclude>
+                        <exclude>src/main/resources/**</exclude>
+                    </excludes>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>remove</goal>
+                            <goal>format</goal>
+                        </goals>
+                        <phase>package</phase>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <!--
+                    是一个校验单元测试用例覆盖率的工具,可以生成一个测试覆盖率报告,可以给单元测试用例编写提供参考
+                    执行命令：mvn cobertura:cobertura
+                    使用参考：https://www.cnblogs.com/liuchuanfeng/p/6963403.html
+                    -->
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>cobertura-maven-plugin</artifactId>
+                <configuration>
+                    <formats>
+                        <format>html</format>
+                        <format>xml</format>
+                    </formats>
+                    <check />
+                </configuration>
+            </plugin>
+            <plugin>
+                <!--
+                    通过格式化XML并按预定义的顺序组织XML部分，帮助用户对pom.xml进行排序。标准化分类pom的主要优点是它们变得更易读，并且不同模块pom之间的比较变得更容易
+                    -->
+                <groupId>com.github.ekryd.sortpom</groupId>
+                <artifactId>sortpom-maven-plugin</artifactId>
+                <configuration>
+                    <createBackupFile>false</createBackupFile>
+                    <expandEmptyElements>false</expandEmptyElements>
+                    <lineSeparator>\n</lineSeparator>
+                    <keepBlankLines>true</keepBlankLines>
+                    <nrOfIndentSpace>4</nrOfIndentSpace>
+                    <predefinedSortOrder>recommended_2008_06</predefinedSortOrder>
+                    <sortDependencies>scope,groupId,artifactId</sortDependencies>
+                    <sortProperties>true</sortProperties>
+                    <verifyFail>Stop</verifyFail>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>sort-pom</id>
+                        <goals>
+                            <goal>sort</goal>
+                        </goals>
+                        <phase>process-sources</phase>
+                    </execution>
+                    <execution>
+                        <id>verify-pom</id>
+                        <goals>
+                            <goal>verify</goal>
+                        </goals>
+                        <phase>process-resources</phase>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <!--
+                Enforcer可以在项目validate时，对项目环境进行检查
+                Enforcer配置后默认会在validate后执行enforcer:enforce,然后对项目环境进行检查。比如jdk版本
+                使用参考：https://www.cnblogs.com/qyf404/p/4829327.html
+                 -->
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-enforcer-plugin</artifactId>
+                <configuration>
+                    <rules>
+                        <dependencyConvergence />
+                        <requireJavaVersion>
+                            <version>[${java.version},)</version>
+                        </requireJavaVersion>
+                        <requireMavenVersion>
+                            <version>[${maven.version},)</version>
+                        </requireMavenVersion>
+                    </rules>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>enforce</id>
+                        <goals>
+                            <!-- <goal>enforce</goal> -->
+                            <goal>display-info</goal>
+                        </goals>
+                        <phase>compile</phase>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
